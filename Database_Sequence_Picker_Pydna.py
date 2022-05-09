@@ -8,6 +8,13 @@ Created on Tue May  3 21:56:17 2022
 import Bio
 import Bio.Blast
 
-from Bio.Blast import NCIBWWW
+#Input for the sequence
+from Bio.Seq import Seq
 
-my_seq = input("What is the sequence?")
+my_seq= Seq("sequence")
+
+#Searching Database for sequence
+from Bio.Blast import NCIBWWW
+result_handle = NCIBWWW.qblast( "blastn", "nt", Seq("sequence", generic_dna))
+
+
