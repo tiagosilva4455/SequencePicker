@@ -5,16 +5,33 @@ Created on Tue May  3 21:56:17 2022
 @author: Tiago Silva
 """
 
-import Bio
-import Bio.Blast
+from Bio.Blast import NCBIWWW
+from Bio.Blast import NCBIXML
 
-#Input for the sequence
-from Bio.Seq import Seq
+seq = "ctgacgctca"
 
-my_seq= Seq("sequence")
+# def genbankref(seq):
+    
+#Blast
 
-#Searching Database for sequence
-from Bio.Blast import NCIBWWW
-result_handle = NCIBWWW.qblast( "blastn", "nt", Seq("sequence", generic_dna))
+result_handle = NCBIWWW.qblast("blastn", "nt", seq)
+
+blast_records = NCBIXML.parse(result_handle)
+
+print(result_handle)
+    
+#Saving results
+
+#with open("blast_results.xml", "w+") as save_to:
+    #save_to.write(result_handle.read())
+    #result_handle.close()
+    
+#Opening results
+
+#result_handle=open("blast_results.xml","r")
+#blast_record=NCBIXML.read(result_handle)
+#print(blast_record)
+
+
 
 
