@@ -4,6 +4,7 @@ Created on Tue May  3 21:56:17 2022
 
 @author: Tiago Silva
 """
+seq = "GGGTAACGGG GAATAAGGGT TCGATTCCGG AGAGGGAGCC TGAGAAACGG CTACCACATC CAAGGAAGGC AGCAGGCGCG CAAATTACCC AATCCTAATT CAGGGAGGTA GTGACAATAA ATAACGATAC AGGGCCCATT CGGGTCTTGT AATTGGAATG AGTACAATGT AAATACCTTA ACGAGGAACA ATTGGAGGGC AAGTCTGGTG CCAGCAGCCG CGGTAATTCC AGCTCCAATA"= 
 
 def genbankref(seq):
     
@@ -60,5 +61,6 @@ def genbankref(seq):
             print()
             print(e_value)
             if accessions == "":
-                break #PRINTING START AND STOP SITES
-                    
+                break #PRINTING START AND STOP SITE
+               
+genbankref(seq)
